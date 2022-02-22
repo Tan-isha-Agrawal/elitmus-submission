@@ -34,3 +34,6 @@ Chick on http://localhost:3000/ and login with google or create an account
 
 ## Video
 For video explanation of project and set up refer: https://bit.ly/tanisha-elitmus-submission
+### Installation and setup: For installation and setup
+### Project Structure: For project overview of different files and their purpose
+### Demo: for different functions
