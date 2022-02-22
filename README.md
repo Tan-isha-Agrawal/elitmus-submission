@@ -33,4 +33,4 @@ Chick on http://localhost:3000/ and login with google or create an account
 ### Step 8: YaY! Your web application is up
 
 ## Video
-For video explanation of project and set up refer: https:/bit.ly/tanisha-elitmus-submission
+For video explanation of project and set up refer: https://bit.ly/tanisha-elitmus-submission
