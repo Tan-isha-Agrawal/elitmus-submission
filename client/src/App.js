@@ -77,30 +77,9 @@ class App extends React.Component {
     loginHandler = (event, authData) => {
        console.log(authData,'improps')
      //   event.preventDefault();
-     if(authData.googlelogin){
-        this.setState({
-            isAuth: true,
-            userinfo: {
-                name: authData.name,
-                userId: '',
-                isAdmin: true,
-            },
-            token: authData.token
-        });
-        console.log(this.state)
-        localStorage.setItem('token', authData.token);
-        localStorage.setItem('name', authData.name);
-        localStorage.setItem('userId', '');
-        localStorage.setItem('isAdmin', true);
-        const remainingMilliseconds = 60 * 60 * 1000;
-        const expiryDate = new Date(
-            new Date().getTime() + remainingMilliseconds
-        );
-        localStorage.setItem('expiryDate', expiryDate.toISOString());
-        this.setAutoLogout(remainingMilliseconds);
-
-     }
-     else{
+     if(!authData.googlelogin){
+        
+    
         fetch('http://localhost:4000/auth/login/', {
             method: 'POST',
             headers: {
@@ -147,6 +126,30 @@ class App extends React.Component {
                     isAuth: false
                 });
             });}
+            else{
+                this.setState({
+                    isAuth: true,
+                    userinfo: {
+                        name: authData.name,
+                        userId: '',
+                        isAdmin: true,
+                    },
+                    token: authData.token
+                });
+                console.log(this.state)
+                localStorage.setItem('token', authData.token);
+                localStorage.setItem('name', authData.name);
+                localStorage.setItem('userId', '');
+                localStorage.setItem('isAdmin', true);
+                const remainingMilliseconds = 60 * 60 * 1000;
+                const expiryDate = new Date(
+                    new Date().getTime() + remainingMilliseconds
+                );
+                localStorage.setItem('expiryDate', expiryDate.toISOString());
+                this.setAutoLogout(remainingMilliseconds);
+        
+             }
+            
     };
     signupHandler = (event, authData) => {
         event.preventDefault();

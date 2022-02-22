@@ -48,7 +48,7 @@ handleResponse=e =>{
   })
 }
   handleSubmit = e => {
- 
+ e.preventDefault()
     if (formValid(this.state)) {
       console.log(`
         --SUBMITTING--     
@@ -57,7 +57,8 @@ handleResponse=e =>{
       `);
       this.props.onLogin(e, {
         email: this.state.email,
-        password: this.state.password
+        password: this.state.password,
+        googlelogin:false
       })
     } else {
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
